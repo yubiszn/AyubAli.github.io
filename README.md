@@ -1,4 +1,4 @@
-# AyubAli.github.io
+# yubiszn.github.io
 Personal Portfolio Website - HTML, CSS, JS
 
 
