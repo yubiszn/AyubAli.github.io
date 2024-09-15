@@ -321,37 +321,89 @@ img {
   padding-top: 2rem;
 }
 
-.home__name{
-  font-size: var(--biggest-font-size);
+/* animation for name */ 
+.home__name {
   text-align: center;
   color: #1b4d3e;
+  position: relative;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  transition: color 1s, font-size 1s; /* Apply transition to both color and font-size */
 }
 
+.home__name:hover {
+  color: orangered;
+  font-size: var(--biggest-font-size);
+  transition: color 1s, font-size 1s; /* Ensure transition properties are the same for hover state */
+}
 .home__gradpic{
   position: relative;
   justify-self: center;
 }
 
-.home__image{
-  width: 350px;
-}
 
-.home__img{
+/* -------------------------- */ /*  video animation overlay */ /* -------------------------- */ 
+.home__image {
   position: relative;
-  z-index: 10;
+  width: 560px; /* Width of the video */
+  height: 415px; /* Height of the video */
+  overflow: hidden;
 }
 
-.home__shadow{
+
+.home__video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--container-color);
-  position: absolute;
-  bottom: -1.75rem;
-  right: -.75rem;
-  border: 4px solid var(--black-color);
-  z-index: 5;
-  transition: background-color .4s;
+  background: rgba(255, 255, 255, 0); /* Transparent background */
+  z-index: 5; /* Ensure it sits above the video */
 }
+
+.home__img,
+.media-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease; /* Smooth transition for opacity */
+}
+
+.media-video {
+  opacity: 0; /* Initially hidden */
+  border: none; /* Remove border for iframe */
+}
+
+.home__image:hover .home__img {
+  opacity: 0; /* Hide the image on hover */
+}
+
+.home__image:hover .media-video {
+  opacity: 1; /* Show the video on hover */
+}
+
+/* Hide labels by default */
+.home__arrow,
+.home__line,
+.home__shadow,
+.geometric-box {
+   opacity: 1; /* Or whatever default visibility you prefer */
+   transition: opacity 0.3s ease;
+}
+
+/* Hide labels when hovering over the container */
+.home__image:hover .home__arrow,
+.home__image:hover .home__line,
+.home__image:hover .home__shadow,
+.home__image:hover .geometric-box {
+   opacity: 0;
+}
+
+/* -------------------------- */ /* -------------------------- */ 
+
 
 .home__arrow,
 .home__line{
