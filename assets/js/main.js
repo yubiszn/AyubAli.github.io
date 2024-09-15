@@ -67,3 +67,4 @@ const sendEmail = (e) =>{
 }
 
 contactForm.addEventListener('submit', sendEmail)
+
